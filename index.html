@@ -947,16 +947,16 @@
 
       .market-showcase {
         display: grid;
-        grid-template-columns: 1.42fr 0.94fr;
-        gap: 16px;
+        grid-template-columns: 1.28fr 0.86fr;
+        gap: 14px;
         align-items: stretch;
       }
 
       .market-spotlight {
         position: relative;
         overflow: hidden;
-        padding: 22px 22px 20px;
-        min-height: 560px;
+        padding: 18px 18px 16px;
+        min-height: 432px;
       }
 
       .market-spotlight::before,
@@ -984,8 +984,8 @@
       .market-book-card {
         position: relative;
         overflow: hidden;
-        padding: 18px 18px 16px;
-        min-height: 272px;
+        padding: 16px 16px 14px;
+        min-height: 208px;
       }
 
       .market-book-content {
@@ -1002,8 +1002,8 @@
       .market-side-stack {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        gap: 16px;
-        min-height: 560px;
+        gap: 14px;
+        min-height: 432px;
       }
 
       .market-book-head {
@@ -1011,7 +1011,7 @@
         justify-content: space-between;
         align-items: flex-start;
         gap: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
       }
 
       .market-book-pair {
@@ -1064,7 +1064,7 @@
       }
 
       .market-book-columns {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         padding: 0 18px 0 14px;
         color: rgba(222, 230, 244, 0.55);
         font-size: 13px;
@@ -1078,7 +1078,7 @@
 
       .market-book-ladder {
         display: grid;
-        gap: 4px;
+        gap: 3px;
       }
 
       .market-spotlight .market-book-ladder {
@@ -1093,14 +1093,14 @@
       .market-spotlight .market-book-row {
         flex: 1 1 0;
         min-height: 0;
-        padding-top: 6px;
-        padding-bottom: 6px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
 
       .market-book-row {
         position: relative;
-        padding: 8px 18px 8px 14px;
-        font-size: 15px;
+        padding: 6px 16px 6px 12px;
+        font-size: 14px;
         line-height: 1;
       }
 
@@ -1146,8 +1146,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        margin: 10px 0 12px;
-        padding: 12px 16px;
+        margin: 8px 0 10px;
+        padding: 10px 14px;
         border-radius: 16px;
         border: 1px solid rgba(123, 186, 255, 0.1);
         background: rgba(255, 255, 255, 0.02);
@@ -1155,7 +1155,7 @@
 
       .market-book-mid strong {
         color: #2ee4a9;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1;
       }
 
@@ -1170,12 +1170,12 @@
       }
 
       .market-book-chip {
-        padding: 10px 14px;
+        padding: 8px 12px;
         border-radius: 999px;
         border: 1px solid rgba(123, 186, 255, 0.14);
         background: rgba(255, 255, 255, 0.03);
         color: rgba(234, 239, 248, 0.88);
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         white-space: nowrap;
       }
@@ -1206,7 +1206,7 @@
       }
 
       .market-book-card .market-book-mid strong {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .section-action {
@@ -1216,62 +1216,161 @@
       }
 
       .amax-tabs {
+        position: relative;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 16px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 120px;
+        row-gap: 16px;
+        padding: 6px 0;
+        align-items: start;
+      }
+
+      .amax-tabs::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(83, 157, 255, 0), rgba(83, 157, 255, 0.55) 12%, rgba(99, 240, 255, 0.72) 50%, rgba(83, 157, 255, 0.55) 88%, rgba(83, 157, 255, 0));
+        box-shadow: 0 0 18px rgba(99, 240, 255, 0.12);
+        pointer-events: none;
       }
 
       .amax-tab {
         position: relative;
-        min-height: 176px;
-        padding: 18px 16px 22px;
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 14px;
+        row-gap: 8px;
+        width: auto;
+        max-width: none;
+        min-height: 0;
+        padding: 14px 16px 16px;
         border-radius: 18px;
         border: 1px solid rgba(123, 186, 255, 0.12);
         background:
           radial-gradient(circle at 50% 0%, rgba(90, 146, 255, 0.14), transparent 42%),
           linear-gradient(180deg, rgba(6, 11, 18, 0.98), rgba(4, 8, 14, 0.98));
         color: #edf5ff;
-        text-align: center;
-        font-size: 16px;
+        text-align: left;
+        font-size: 14px;
         font-weight: 600;
-        cursor: pointer;
-        overflow: hidden;
+        overflow: visible;
+        box-shadow: var(--shadow);
+        z-index: 1;
+      }
+
+      .amax-tab:nth-child(odd) {
+        grid-column: 1;
+        margin-right: 34px;
+        justify-self: start;
+      }
+
+      .amax-tab:nth-child(even) {
+        grid-column: 2;
+        margin-left: 34px;
+        margin-top: 34px;
+        justify-self: end;
+      }
+
+      .amax-tab:nth-child(3) {
+        margin-top: -6px;
+      }
+
+      .amax-tab:nth-child(5) {
+        margin-top: -14px;
       }
 
       .amax-tab::before {
         content: "";
         position: absolute;
-        inset: auto 0 0;
-        height: 56px;
-        background: linear-gradient(180deg, rgba(5, 10, 18, 0), rgba(5, 10, 18, 0.94));
+        top: calc(50% - 18px);
+        width: 60px;
+        height: 18px;
+        background: transparent;
+        box-shadow: none;
+        z-index: 2;
+      }
+
+      .amax-tab:nth-child(odd)::before {
+        right: -60px;
+        border-right: 2px solid rgba(99, 240, 255, 0.78);
+        border-bottom: 2px solid rgba(99, 240, 255, 0.78);
+        border-bottom-right-radius: 12px;
+      }
+
+      .amax-tab:nth-child(even)::before {
+        left: -60px;
+        border-left: 2px solid rgba(99, 240, 255, 0.78);
+        border-bottom: 2px solid rgba(99, 240, 255, 0.78);
+        border-bottom-left-radius: 12px;
       }
 
       .amax-tab::after {
         content: "";
         position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(rgba(106, 165, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(106, 165, 255, 0.04) 1px, transparent 1px);
-        background-size: 48px 48px;
-        opacity: 0.3;
-        pointer-events: none;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #8fffe4 0%, #63f0ff 58%, rgba(99, 240, 255, 0.24) 100%);
+        box-shadow: 0 0 0 5px rgba(99, 240, 255, 0.08), 0 0 18px rgba(99, 240, 255, 0.28);
+        transform: translateY(-50%);
+        z-index: 3;
+      }
+
+      .amax-tab:nth-child(odd)::after {
+        right: -66px;
+        top: calc(50% - 24px);
+      }
+
+      .amax-tab:nth-child(even)::after {
+        left: -66px;
+        top: calc(50% - 24px);
       }
 
       .amax-tab-art {
         position: relative;
         z-index: 1;
         display: block;
-        width: 100%;
-        height: 104px;
-        margin-bottom: 12px;
+        width: 92px;
+        height: 78px;
+        margin-bottom: 0;
         pointer-events: none;
+        grid-column: 1;
+        grid-row: 1 / span 2;
       }
 
       .amax-tab-copy {
         position: relative;
         z-index: 1;
         display: block;
+        grid-column: 2;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .amax-tab-copy strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .amax-tab-desc {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .amax-tab .solid-btn {
+        grid-column: 2;
+        margin-top: 4px;
+        justify-self: flex-start;
       }
 
       .amax-tab:nth-child(1) .amax-tab-art::before {
@@ -1408,38 +1507,6 @@
         color: #7cffb2;
         border-color: rgba(76, 255, 151, 0.42);
         box-shadow: inset 0 0 0 1px rgba(76, 255, 151, 0.16), 0 0 26px rgba(76, 255, 151, 0.08);
-      }
-
-      .amax-panel {
-        display: none;
-        margin-top: 18px;
-        padding: 30px 30px 28px;
-        border-radius: var(--radius-xl);
-        border: 1px solid rgba(123, 186, 255, 0.14);
-        background:
-          linear-gradient(180deg, rgba(7, 12, 21, 0.82), rgba(5, 9, 16, 0.94)),
-          linear-gradient(180deg, rgba(82, 144, 255, 0.08), transparent 36%);
-        box-shadow: var(--shadow);
-      }
-
-      .amax-panel.active {
-        display: block;
-      }
-
-      .amax-panel h3 {
-        margin: 0;
-        font-size: 28px;
-      }
-
-      .amax-panel p {
-        margin: 18px 0 0;
-        color: var(--muted);
-        line-height: 1.9;
-        font-size: 16px;
-      }
-
-      .amax-panel .solid-btn {
-        margin-top: 24px;
       }
 
       .trust-shell {
@@ -2167,36 +2234,46 @@
             <h2>AMAX 专享活动</h2>
           </div>
           <div class="amax-tabs" aria-label="AMAX 活动列表">
-            <button class="amax-tab" type="button" data-amax="1"><span class="amax-tab-art" aria-hidden="true"></span><span class="amax-tab-copy">活动 1<br />每日交易奖池</span></button>
-            <button class="amax-tab" type="button" data-amax="2"><span class="amax-tab-art" aria-hidden="true"></span><span class="amax-tab-copy">活动 2<br />风险保障计划</span></button>
-            <button class="amax-tab" type="button" data-amax="3"><span class="amax-tab-art" aria-hidden="true"></span><span class="amax-tab-copy">活动 3<br />邀请瓜分 70,000 AMAX</span></button>
-            <button class="amax-tab" type="button" data-amax="4"><span class="amax-tab-art" aria-hidden="true"></span><span class="amax-tab-copy">活动 4<br />团队返佣升级计划</span></button>
-            <button class="amax-tab" type="button" data-amax="5"><span class="amax-tab-art" aria-hidden="true"></span><span class="amax-tab-copy">活动 5<br />新人专享</span></button>
-          </div>
-          <div class="amax-panel" data-amax-panel="1">
-            <h3>活动 1 - 每日交易奖池</h3>
-            <p>活动期间，平台每日设立 20,000 AMAX 奖励池，所有用户可参与 AMAX/USDT 现货交易获得活动积分，根据积分贡献占比瓜分奖励池。</p>
-            <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
-          </div>
-          <div class="amax-panel" data-amax-panel="2">
-            <h3>活动 2 - 风险保障计划</h3>
-            <p>为了鼓励用户积极参与 AMAX 交易生态建设，活动期间平台同步推出「交易风险保障计划」。针对 AMAX/USDT 交易对产生的已实现亏损，平台将按照对应 VIP 等级给予 AMAX 补贴。</p>
-            <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
-          </div>
-          <div class="amax-panel" data-amax-panel="3">
-            <h3>活动 3 - 邀请瓜分 70,000 AMAX</h3>
-            <p>活动期间内，成功邀请有效用户达到对应人数，即可获得对应等级 AMAX 空投奖励。</p>
-            <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
-          </div>
-          <div class="amax-panel" data-amax-panel="4">
-            <h3>活动 4 - 团队返佣升级计划</h3>
-            <p>活动期间内，邀请人团队满足有效用户数量及团队净入金要求，可享受更高等级交易手续费返佣比例。</p>
-            <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
-          </div>
-          <div class="amax-panel" data-amax-panel="5">
-            <h3>活动 5 - 新人专享</h3>
-            <p>活动期间通过邀请链接完成注册的新用户，均可参与瓜分总价值 30,000 AMAX 奖池。</p>
-            <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            <article class="amax-tab active">
+              <span class="amax-tab-art" aria-hidden="true"></span>
+              <div class="amax-tab-copy">
+                <strong>活动 1 - 每日交易奖池</strong>
+                <span class="amax-tab-desc">活动期间，平台每日设立 20,000 AMAX 奖励池，所有用户可参与 AMAX/USDT 现货交易获得活动积分，根据积分贡献占比瓜分奖励池。</span>
+              </div>
+              <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            </article>
+            <article class="amax-tab">
+              <span class="amax-tab-art" aria-hidden="true"></span>
+              <div class="amax-tab-copy">
+                <strong>活动 2 - 风险保障计划</strong>
+                <span class="amax-tab-desc">为了鼓励用户积极参与 AMAX 交易生态建设，活动期间平台同步推出「交易风险保障计划」。针对 AMAX/USDT 交易对产生的已实现亏损，平台将按照对应 VIP 等级给予 AMAX 补贴。</span>
+              </div>
+              <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            </article>
+            <article class="amax-tab">
+              <span class="amax-tab-art" aria-hidden="true"></span>
+              <div class="amax-tab-copy">
+                <strong>活动 3 - 邀请瓜分 70,000 AMAX</strong>
+                <span class="amax-tab-desc">活动期间内，成功邀请有效用户达到对应人数，即可获得对应等级 AMAX 空投奖励。</span>
+              </div>
+              <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            </article>
+            <article class="amax-tab">
+              <span class="amax-tab-art" aria-hidden="true"></span>
+              <div class="amax-tab-copy">
+                <strong>活动 4 - 团队返佣升级计划</strong>
+                <span class="amax-tab-desc">活动期间内，邀请人团队满足有效用户数量及团队净入金要求，可享受更高等级交易手续费返佣比例。</span>
+              </div>
+              <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            </article>
+            <article class="amax-tab">
+              <span class="amax-tab-art" aria-hidden="true"></span>
+              <div class="amax-tab-copy">
+                <strong>活动 5 - 新人专享</strong>
+                <span class="amax-tab-desc">活动期间通过邀请链接完成注册的新用户，均可参与瓜分总价值 30,000 AMAX 奖池。</span>
+              </div>
+              <a class="solid-btn" href="vip-center-coming-soon-dual-prototype-v2-simple.html">敬请期待</a>
+            </article>
           </div>
         </section>
 
@@ -2532,8 +2609,6 @@
 
       const marketModeTabs = document.querySelectorAll(".market-mode-tab");
       const marketModePanels = document.querySelectorAll("[data-market-mode-panel]");
-      const amaxTabs = document.querySelectorAll(".amax-tab");
-      const amaxPanels = document.querySelectorAll(".amax-panel");
       let currentMarketMode = "contract";
 
       const marketData = {
@@ -2549,24 +2624,14 @@
                 { price: "68,146.2", qty: "148", bar: "81%" },
                 { price: "68,143.4", qty: "137", bar: "79%" },
                 { price: "68,141.9", qty: "131", bar: "77%" },
-                { price: "68,140.6", qty: "126", bar: "76%" },
-                { price: "68,136.8", qty: "109", bar: "72%" },
-                { price: "68,132.4", qty: "88", bar: "66%" },
-                { price: "68,128.1", qty: "41", bar: "52%" },
-                { price: "68,126.0", qty: "29", bar: "44%" },
-                { price: "68,125.3", qty: "23", bar: "38%" }
+                { price: "68,140.6", qty: "126", bar: "76%" }
               ],
               buys: [
                 { price: "68,123.1", qty: "12", bar: "18%" },
                 { price: "68,122.4", qty: "14", bar: "20%" },
                 { price: "68,121.6", qty: "16", bar: "22%" },
                 { price: "68,121.1", qty: "17", bar: "23%" },
-                { price: "68,120.8", qty: "18", bar: "24%" },
-                { price: "68,116.6", qty: "36", bar: "40%" },
-                { price: "68,112.9", qty: "57", bar: "56%" },
-                { price: "68,108.2", qty: "82", bar: "70%" },
-                { price: "68,103.5", qty: "116", bar: "82%" },
-                { price: "68,098.7", qty: "143", bar: "88%" }
+                { price: "68,120.8", qty: "18", bar: "24%" }
               ]
             },
             top: {
@@ -2577,16 +2642,12 @@
               sells: [
                 { price: "3,821.4", qty: "86", bar: "72%" },
                 { price: "3,820.1", qty: "82", bar: "69%" },
-                { price: "3,818.9", qty: "74", bar: "66%" },
-                { price: "3,816.6", qty: "61", bar: "58%" },
-                { price: "3,814.2", qty: "39", bar: "46%" }
+                { price: "3,818.9", qty: "74", bar: "66%" }
               ],
               buys: [
                 { price: "3,811.3", qty: "19", bar: "26%" },
                 { price: "3,810.7", qty: "23", bar: "30%" },
-                { price: "3,810.1", qty: "28", bar: "34%" },
-                { price: "3,807.8", qty: "47", bar: "49%" },
-                { price: "3,804.4", qty: "65", bar: "61%" }
+                { price: "3,810.1", qty: "28", bar: "34%" }
               ]
             },
             bottom: {
@@ -2597,16 +2658,12 @@
               sells: [
                 { price: "180.14", qty: "34", bar: "76%" },
                 { price: "179.98", qty: "31", bar: "68%" },
-                { price: "179.82", qty: "27", bar: "60%" },
-                { price: "179.54", qty: "19", bar: "46%" },
-                { price: "179.31", qty: "12", bar: "34%" }
+                { price: "179.82", qty: "27", bar: "60%" }
               ],
               buys: [
                 { price: "179.11", qty: "11", bar: "28%" },
                 { price: "178.96", qty: "16", bar: "38%" },
-                { price: "178.84", qty: "22", bar: "49%" },
-                { price: "178.63", qty: "31", bar: "58%" },
-                { price: "178.42", qty: "45", bar: "74%" }
+                { price: "178.84", qty: "22", bar: "49%" }
               ]
             }
           }
@@ -2623,24 +2680,14 @@
                 { price: "68,139.8", qty: "117", bar: "79%" },
                 { price: "68,136.4", qty: "106", bar: "74%" },
                 { price: "68,133.2", qty: "92", bar: "67%" },
-                { price: "68,130.6", qty: "73", bar: "61%" },
-                { price: "68,128.0", qty: "58", bar: "54%" },
-                { price: "68,126.4", qty: "46", bar: "48%" },
-                { price: "68,124.9", qty: "34", bar: "40%" },
-                { price: "68,121.5", qty: "21", bar: "32%" },
-                { price: "68,119.8", qty: "14", bar: "24%" }
+                { price: "68,130.6", qty: "73", bar: "61%" }
               ],
               buys: [
                 { price: "68,117.1", qty: "12", bar: "20%" },
                 { price: "68,115.6", qty: "18", bar: "26%" },
                 { price: "68,113.9", qty: "27", bar: "34%" },
                 { price: "68,111.4", qty: "35", bar: "42%" },
-                { price: "68,108.8", qty: "47", bar: "51%" },
-                { price: "68,104.2", qty: "62", bar: "61%" },
-                { price: "68,100.6", qty: "78", bar: "70%" },
-                { price: "68,096.3", qty: "94", bar: "78%" },
-                { price: "68,091.2", qty: "118", bar: "86%" },
-                { price: "68,086.7", qty: "136", bar: "92%" }
+                { price: "68,108.8", qty: "47", bar: "51%" }
               ]
             },
             top: {
@@ -2651,16 +2698,12 @@
               sells: [
                 { price: "3,812.2", qty: "72", bar: "70%" },
                 { price: "3,810.6", qty: "65", bar: "63%" },
-                { price: "3,808.4", qty: "54", bar: "56%" },
-                { price: "3,807.3", qty: "43", bar: "47%" },
-                { price: "3,806.8", qty: "28", bar: "35%" }
+                { price: "3,808.4", qty: "54", bar: "56%" }
               ],
               buys: [
                 { price: "3,805.6", qty: "21", bar: "30%" },
                 { price: "3,804.8", qty: "27", bar: "35%" },
-                { price: "3,803.1", qty: "39", bar: "46%" },
-                { price: "3,801.7", qty: "52", bar: "55%" },
-                { price: "3,799.9", qty: "66", bar: "64%" }
+                { price: "3,803.1", qty: "39", bar: "46%" }
               ]
             },
             bottom: {
@@ -2671,16 +2714,12 @@
               sells: [
                 { price: "1.2862", qty: "148,600", bar: "78%" },
                 { price: "1.2854", qty: "136,400", bar: "75%" },
-                { price: "1.2846", qty: "126,200", bar: "72%" },
-                { price: "1.2818", qty: "96,800", bar: "62%" },
-                { price: "1.2792", qty: "58,100", bar: "44%" }
+                { price: "1.2846", qty: "126,200", bar: "72%" }
               ],
               buys: [
                 { price: "1.2753", qty: "26,800", bar: "28%" },
                 { price: "1.2748", qty: "34,700", bar: "32%" },
-                { price: "1.2741", qty: "41,200", bar: "38%" },
-                { price: "1.2715", qty: "78,400", bar: "58%" },
-                { price: "1.2682", qty: "118,900", bar: "76%" }
+                { price: "1.2741", qty: "41,200", bar: "38%" }
               ]
             }
           }
@@ -2739,22 +2778,6 @@
       });
 
       setMarketMode("contract");
-
-      const setAmaxPanel = (target) => {
-        amaxTabs.forEach((tab) => {
-          tab.classList.toggle("active", tab.dataset.amax === target);
-        });
-        amaxPanels.forEach((panel) => {
-          panel.classList.toggle("active", panel.dataset.amaxPanel === target);
-        });
-      };
-
-      amaxTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const isActive = tab.classList.contains("active");
-          setAmaxPanel(isActive ? "" : tab.dataset.amax);
-        });
-      });
 
       const faqItems = document.querySelectorAll(".faq-item");
       faqItems.forEach((item) => {
